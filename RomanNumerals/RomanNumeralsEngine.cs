@@ -5,60 +5,41 @@ using System.Text;
 
 namespace RomanNumerals
 {
+    //Using information that already written and tested to refactor code that was becoming too complicated.
     public class RomanNumeralsEngine
     {
-        //public static List<string> romanNumerals = new List<string>() { "I" };
-        //public static List<int> numerals = new List<int>() { 1 };
-
         public string ToRomanNumeral(int number)
         {
-            //var index = number - 1;
-            //return romanNumerals[index];
-
-            var result = "";
-            //reset the counter
-            var counter = number;
-
-            if (counter >= 9 && counter < 19)
+            //Instead of using just a string, also implement a dictionary to hold all roman numerals.
+            Dictionary<int, string> RomanNumerals = new Dictionary<int, string>()
             {
-                counter -= 10;
-                if (counter == -1)
-                {
-                    result += "I";
-                }
-                result += "X";
-            }
+                {1000, "M"},
+                {900, "CM"},
+                {500, "D"},
+                {100, "C"},
+                {90, "XC"},
+                {50, "L"},
+                {40, "XL"},
+                {10, "X"},
+                {9, "IX"},
+                {5, "V"},
+                {4, "IV"},
+                {1, "I"},
+            };
 
-            if (counter >= 4 && counter < 9)
+           var NewRomanNumeralString = new StringBuilder();
+
+           foreach ( var numeral in RomanNumerals)
             {
-                counter = counter - 5;
-                if (counter == -1)
+                while (number >= numeral.Key)
                 {
-                    result += "I";
-                }
-                result += "V";
-                while (counter > 0)
-                {
-                    result += "I";
-                    counter -= 1;
+                    NewRomanNumeralString.Append(numeral.Value);
+                    number -= numeral.Key;
                 }
             }
-
-            if (counter >= 9)
-            {
-                counter -= 10;
-                result += "X";
-            }
-
-            if (counter <= 3)
-            {
-                while (counter > 0)
-                {
-                    result += "I";
-                    counter -= 1;
-                }
-            }
-            return result;
+            return NewRomanNumeralString.ToString();
         }
     }
 }
+
+
