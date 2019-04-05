@@ -85,7 +85,7 @@ namespace RomanNumeralsTest
 
 
         [Fact]
-        public void generator_should_display_vi_when_seven()
+        public void generator_should_display_vii_when_seven()
         {
             //Arrange -- Given -- Context
             var generator = new RomanNumeralsEngine();
@@ -101,7 +101,7 @@ namespace RomanNumeralsTest
 
 
         [Fact]
-        public void generator_should_display_iv_when_eight()
+        public void generator_should_display_viii_when_eight()
         {
             //Arrange -- Given -- Context
             var generator = new RomanNumeralsEngine();
@@ -117,7 +117,7 @@ namespace RomanNumeralsTest
 
 
         [Fact]
-        public void generator_should_display_iv_when_nine()
+        public void generator_should_display_IX_when_nine()
         {
             //Arrange -- Given -- Context
             var generator = new RomanNumeralsEngine();
@@ -133,7 +133,7 @@ namespace RomanNumeralsTest
 
 
         [Fact]
-        public void generator_should_display_iv_when_ten()
+        public void generator_should_display_x_when_ten()
         {
             //Arrange -- Given -- Context
             var generator = new RomanNumeralsEngine();
@@ -148,7 +148,7 @@ namespace RomanNumeralsTest
         }
 
         [Fact]
-        public void generator_should_display_iv_when_eleven()
+        public void generator_should_display_xi_when_eleven()
         {
             //Arrange -- Given -- Context
             var generator = new RomanNumeralsEngine();
@@ -163,7 +163,7 @@ namespace RomanNumeralsTest
         }
 
         [Fact]
-        public void generator_should_display_iv_when_twelve()
+        public void generator_should_display_xii_when_twelve()
         {
             //Arrange -- Given -- Context
             var generator = new RomanNumeralsEngine();
@@ -178,12 +178,87 @@ namespace RomanNumeralsTest
         }
 
         [Fact]
-        public void generator_should_display_iv_when_thirteen()
+        public void generator_should_display_xiii_when_thirteen()
         {
             //Arrange -- Given -- Context
             var generator = new RomanNumeralsEngine();
             var input = 13;
             var expectedResult = "XIII";
+
+            //Act -- When
+            var actualResult = generator.ToRomanNumeral(input);
+
+            //Assert -- Then
+            Assert.Equal(expectedResult, actualResult);
+        }
+
+        [Fact]
+        public void generator_should_display_xiv_when_fourteen()
+        {
+            //Arrange -- Given -- Context
+            var generator = new RomanNumeralsEngine();
+            var input = 14;
+            var expectedResult = "XIV";
+
+            //Act -- When
+            var actualResult = generator.ToRomanNumeral(input);
+
+            //Assert -- Then
+            Assert.Equal(expectedResult, actualResult);
+        }
+
+        [Fact]
+        public void generator_should_display_xvi_when_sixteen()
+        {
+            //Arrange -- Given -- Context
+            var generator = new RomanNumeralsEngine();
+            var input = 16;
+            var expectedResult = "XVI";
+
+            //Act -- When
+            var actualResult = generator.ToRomanNumeral(input);
+
+            //Assert -- Then
+            Assert.Equal(expectedResult, actualResult);
+        }
+
+        [Fact]
+        public void generator_should_display_xix_when_nineteen()
+        {
+            //Arrange -- Given -- Context
+            var generator = new RomanNumeralsEngine();
+            var input = 19;
+            var expectedResult = "XIX";
+
+            //Act -- When
+            var actualResult = generator.ToRomanNumeral(input);
+
+            //Assert -- Then
+            Assert.Equal(expectedResult, actualResult);
+        }
+
+        [Fact]
+        public void generator_should_display_xvi_when_twentyeight()
+        {
+            //Arrange -- Given -- Context
+            var generator = new RomanNumeralsEngine();
+            var input = 16;
+            var expectedResult = "XVI";
+
+            //Act -- When
+            var actualResult = generator.ToRomanNumeral(input);
+
+            //Assert -- Then
+            Assert.Equal(expectedResult, actualResult);
+        }
+
+        [Fact]
+        public void generator_should_display_xvi_when_fifty()
+        {
+            //Arrange -- Given -- Context
+            var generator = new RomanNumeralsEngine();
+            var input = 50;
+            var expectedResult = "L";
 
             //Act -- When
             var actualResult = generator.ToRomanNumeral(input);
