@@ -146,5 +146,50 @@ namespace RomanNumeralsTest
             //Assert -- Then
             Assert.Equal(expectedResult, actualResult);
         }
+
+        [Fact]
+        public void generator_should_display_iv_when_eleven()
+        {
+            //Arrange -- Given -- Context
+            var generator = new RomanNumeralsEngine();
+            var input = 11;
+            var expectedResult = "XI";
+
+            //Act -- When
+            var actualResult = generator.ToRomanNumeral(input);
+
+            //Assert -- Then
+            Assert.Equal(expectedResult, actualResult);
+        }
+
+        [Fact]
+        public void generator_should_display_iv_when_twelve()
+        {
+            //Arrange -- Given -- Context
+            var generator = new RomanNumeralsEngine();
+            var input = 12;
+            var expectedResult = "XII";
+
+            //Act -- When
+            var actualResult = generator.ToRomanNumeral(input);
+
+            //Assert -- Then
+            Assert.Equal(expectedResult, actualResult);
+        }
+
+        [Fact]
+        public void generator_should_display_iv_when_thirteen()
+        {
+            //Arrange -- Given -- Context
+            var generator = new RomanNumeralsEngine();
+            var input = 13;
+            var expectedResult = "XIII";
+
+            //Act -- When
+            var actualResult = generator.ToRomanNumeral(input);
+
+            //Assert -- Then
+            Assert.Equal(expectedResult, actualResult);
+        }
     }
 }
