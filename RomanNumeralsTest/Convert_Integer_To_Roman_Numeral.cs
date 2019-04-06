@@ -253,12 +253,57 @@ namespace RomanNumeralsTest
         }
 
         [Fact]
-        public void generator_should_display_xvi_when_fifty()
+        public void generator_should_display_xvi_when_fortynine()
+        {
+            //Arrange -- Given -- Context
+            var generator = new RomanNumeralsEngine();
+            var input = 49;
+            var expectedResult = "XLIX";
+
+            //Act -- When
+            var actualResult = generator.ToRomanNumeral(input);
+
+            //Assert -- Then
+            Assert.Equal(expectedResult, actualResult);
+        }
+
+        [Fact]
+        public void generator_should_display_L_when_fifty()
         {
             //Arrange -- Given -- Context
             var generator = new RomanNumeralsEngine();
             var input = 50;
             var expectedResult = "L";
+
+            //Act -- When
+            var actualResult = generator.ToRomanNumeral(input);
+
+            //Assert -- Then
+            Assert.Equal(expectedResult, actualResult);
+        }
+
+        [Fact]
+        public void generator_should_display_LX_when_sixty()
+        {
+            //Arrange -- Given -- Context
+            var generator = new RomanNumeralsEngine();
+            var input = 60;
+            var expectedResult = "LX";
+
+            //Act -- When
+            var actualResult = generator.ToRomanNumeral(input);
+
+            //Assert -- Then
+            Assert.Equal(expectedResult, actualResult);
+        }
+
+        [Fact]
+        public void generator_should_display_LXX_when_seventy()
+        {
+            //Arrange -- Given -- Context
+            var generator = new RomanNumeralsEngine();
+            var input = 70;
+            var expectedResult = "LXX";
 
             //Act -- When
             var actualResult = generator.ToRomanNumeral(input);

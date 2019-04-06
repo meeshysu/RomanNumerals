@@ -8,38 +8,39 @@ namespace RomanNumerals
     //Using information that already written and tested to refactor code that was becoming too complicated.
     public class RomanNumeralsEngine
     {
-        public string ToRomanNumeral(int number)
-        {
-            //Instead of using just a string, also implement a dictionary to hold all roman numerals.
-            Dictionary<int, string> RomanNumerals = new Dictionary<int, string>()
+
+        public static List<string> romanNumerals = new List<string>()
             {
-                {1000, "M"},
-                {900, "CM"},
-                {500, "D"},
-                {100, "C"},
-                {90, "XC"},
-                {50, "L"},
-                {40, "XL"},
-                {10, "X"},
-                {9, "IX"},
-                {5, "V"},
-                {4, "IV"},
-                {1, "I"},
+                "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"
+            };
+        public static List<int> integers = new List<int>()
+            {
+                1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1
             };
 
-           var NewRomanNumeralString = new StringBuilder();
-
-           foreach ( var numeral in RomanNumerals)
+        public string ToRomanNumeral(int number)
+        {
+            var NewRomanNumeralString = "";
+            while (number > 0)
             {
-                while (number >= numeral.Key)
-                {
-                    NewRomanNumeralString.Append(numeral.Value);
-                    number -= numeral.Key;
-                }
+                //find the biggest numeral that is less than or equal to our number
+                var index = integers.FindIndex(x => x <= number);
+                //subtract it's value from the number
+                number -= integers[index];
+                //put it on to the end of your roman numeral
+                NewRomanNumeralString += romanNumerals[index];
             }
+            //return the new empty string that now has been filled with our answer
             return NewRomanNumeralString.ToString();
         }
     }
+
 }
+
+
+
+
+
+
 
 
