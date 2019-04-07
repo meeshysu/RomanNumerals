@@ -5,7 +5,6 @@ using System.Text;
 
 namespace RomanNumerals
 {
-    //Using information that already written and tested to refactor code that was becoming too complicated.
     public class RomanNumeralsEngine
     {
 
@@ -32,6 +31,42 @@ namespace RomanNumerals
             }
             //return the new empty string that now has been filled with our answer
             return NewRomanNumeralString.ToString();
+        }
+
+        public int ToIntenger(string romanNumeral)
+        {
+            Dictionary<char, int> RomanNumeralToIntegers = new Dictionary<char, int>()
+            {
+                {'I', 1 },
+                {'V', 5 },
+                {'X', 10 },
+                {'L', 50 },
+                {'C', 100 },
+                {'D', 500 },
+                {'M', 1000 }
+            };
+
+            var totalNumbers = 0;
+            var previousNumbers = 0;
+
+            foreach (var character in romanNumeral)
+            {
+                var currentNumber = RomanNumeralToIntegers[character];
+                totalNumbers += currentNumber;
+
+                if(previousNumbers !=0 && previousNumbers < currentNumber)
+                {
+                    if (previousNumbers == 1 && (currentNumber == 5 || currentNumber == 10)
+                        || previousNumbers == 10 && (currentNumber == 50 || currentNumber == 100)
+                        || previousNumbers == 100 && (currentNumber == 1000))
+                    {
+                        totalNumbers -= 2 * previousNumbers;
+                    }
+                    else return 0;
+                }
+                previousNumbers = currentNumber;
+            }
+            return totalNumbers;
         }
     }
 
