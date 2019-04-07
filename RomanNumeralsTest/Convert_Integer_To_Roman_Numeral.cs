@@ -6,13 +6,23 @@ namespace RomanNumeralsTest
 {
     public class Convert_Integer_To_Roman_Numeral
     {
-        [Fact]
-        public void generator_should_display_i_when_one()
+        [Theory]
+        [InlineData(74, "LXXIV")]
+        [InlineData(77, "LXXVII")]
+        [InlineData(80, "LXXX")]
+        [InlineData(84, "LXXXIV")]
+        [InlineData(89, "LXXXIX")]
+        [InlineData(94, "XCIV")]
+        [InlineData(97, "XCVII")]
+        [InlineData(104, "CIV")]
+        [InlineData(507, "DVII")]
+        [InlineData(1257, "MCCLVII")]
+        [InlineData(2589, "MMDLXXXIX")]
+        [InlineData(3999, "MMMCMXCIX")]
+        public void generator_should_display_i_when_one(int input, string expectedResult)
         {
             //Arrange -- Given -- Context
             var generator = new RomanNumeralsEngine();
-            var input = 1;
-            var expectedResult = "I";
 
             //Act -- When
             var actualResult = generator.ToRomanNumeral(input);
