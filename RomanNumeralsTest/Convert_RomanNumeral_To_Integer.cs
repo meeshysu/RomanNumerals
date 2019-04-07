@@ -24,55 +24,18 @@ namespace RomanNumerals.Test
         [InlineData("XXIV", 24)]
         [InlineData("XXVI", 26)]
         [InlineData("XXX", 30)]
+        [InlineData("XLVII", 47)]
+        [InlineData("XLIX", 49)]
+        [InlineData("L", 50)]
+        [InlineData("LVIII", 58)]
+        [InlineData("LIX", 59)]
+        [InlineData("LXIV", 64)]
+        [InlineData("LXXVIII", 78)]
+
         public void generator_should_display_one_when_i(string input, int expectedResult)
         {
             //Arrange -- Given -- Context
             var generator = new RomanNumeralsEngine();
-
-            //Act -- When
-            var actualResult = generator.ToIntenger(input);
-
-            //Assert -- Then
-            Assert.Equal(expectedResult, actualResult);
-        }
-
-        [Fact]
-        public void generator_should_display_two_when_ii()
-        {
-            //Arrange -- Given -- Context
-            var generator = new RomanNumeralsEngine();
-            var input = "II";
-            var expectedResult = 2;
-
-            //Act -- When
-            var actualResult = generator.ToIntenger(input);
-
-            //Assert -- Then
-            Assert.Equal(expectedResult, actualResult);
-        }
-
-        [Fact]
-        public void generator_should_display_three_when_iii()
-        {
-            //Arrange -- Given -- Context
-            var generator = new RomanNumeralsEngine();
-            var input = "III";
-            var expectedResult = 3;
-
-            //Act -- When
-            var actualResult = generator.ToIntenger(input);
-
-            //Assert -- Then
-            Assert.Equal(expectedResult, actualResult);
-        }
-
-        [Fact]
-        public void generator_should_display_four_when_iv()
-        {
-            //Arrange -- Given -- Context
-            var generator = new RomanNumeralsEngine();
-            var input = "IV";
-            var expectedResult = 4;
 
             //Act -- When
             var actualResult = generator.ToIntenger(input);
