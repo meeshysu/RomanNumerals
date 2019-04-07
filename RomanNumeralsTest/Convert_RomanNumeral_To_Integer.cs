@@ -31,7 +31,7 @@ namespace RomanNumerals.Test
         [InlineData("LIX", 59)]
         [InlineData("LXIV", 64)]
         [InlineData("LXXVIII", 78)]
-
+        [InlineData("MMMCMXCIX", 3999)]
         public void generator_should_display_one_when_i(string input, int expectedResult)
         {
             //Arrange -- Given -- Context
